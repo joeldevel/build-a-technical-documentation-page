@@ -5,19 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <title></title>
+    <style>
+    ul {
+      list-style: none;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+    #navbar,
+    #main-doc {
+      padding: 1rem;
+    }
+    @media (min-width: 600px) {
+      .container {
+        flex-direction: row;
+        /* position: relative; */
+      }
+      #navbar {
+        position:sticky;
+        top: 0;
+        background: whitesmoke;
+        height: 100vh;
+      }
+    }
+    </style>
   </head>
   <body>
+    <div class="container">
+      <nav id="navbar">
+        <header>
+          <h1>Documentation</h1>
+          <p>This is about something difficult</p>
+        </header>
+        <ul>
+          <li><a href="#section_1" class="nav-link">section 1</a></li>
+          <li><a href="#section_2" class="nav-link">section 2</a></li>
+          <li><a href="#section_3" class="nav-link">section 3</a></li>
+          <li><a href="#section_4" class="nav-link">section 4</a></li>
+          <li><a href="#section_5" class="nav-link">section 5</a></li>
+        </ul>
+      </nav>
+      <main id="main-doc">
+        <section class="main-section" id="section_1">
+          <header>section 1</header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum aspernatur, natus esse beatae, voluptas ex eveniet quasi ipsa, dignissimos cumque quidem voluptate ipsum totam maiores! Esse voluptates est iste aperiam.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum odio optio quaerat voluptatibus recusandae, quam accusantium consequuntur, voluptates, sit quia perferendis ullam doloremque cupiditate alias veritatis sequi ut fugit molestiae.</p>
+          <code>a b c</code>
+          <ul>
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+            <li>g</li>
+            <li>d</li>
+          </ul>
+        </section>
 
-    <main id="main-doc">
-      <section class="main-section"></section>
-      <section class="main-section"></section>
-      <section class="main-section"></section>
-      <section class="main-section"></section>
-      <section class="main-section"></section>
-      <section class="main-section"></section>
-      <section class="main-section"></section>
-      <section class="main-section"></section>
-    </main>
+        <section class="main-section" id="section_2">
+          <header>section 2</header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum aspernatur, natus esse beatae, voluptas ex eveniet quasi ipsa, dignissimos cumque quidem voluptate ipsum totam maiores! Esse voluptates est iste aperiam.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum odio optio quaerat voluptatibus recusandae, quam accusantium consequuntur, voluptates, sit quia perferendis ullam doloremque cupiditate alias veritatis sequi ut fugit molestiae.</p>
+          <code>a b c</code>
+          <ul>
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+            <li>g</li>
+            <li>d</li>
+          </ul>
+        </section>
+
+        <section class="main-section" id="section_3">
+          <header>section 3</header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum aspernatur, natus esse beatae, voluptas ex eveniet quasi ipsa, dignissimos cumque quidem voluptate ipsum totam maiores! Esse voluptates est iste aperiam.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum odio optio quaerat voluptatibus recusandae, quam accusantium consequuntur, voluptates, sit quia perferendis ullam doloremque cupiditate alias veritatis sequi ut fugit molestiae.</p>
+          <code>a b c</code>
+          <ul>
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+            <li>g</li>
+            <li>d</li>
+          </ul>
+        </section>
+
+        <section class="main-section" id="section_4">
+          <header>section 4</header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum aspernatur, natus esse beatae, voluptas ex eveniet quasi ipsa, dignissimos cumque quidem voluptate ipsum totam maiores! Esse voluptates est iste aperiam.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum odio optio quaerat voluptatibus recusandae, quam accusantium consequuntur, voluptates, sit quia perferendis ullam doloremque cupiditate alias veritatis sequi ut fugit molestiae.</p>
+          <code>a b c</code>
+          <ul>
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+            <li>g</li>
+            <li>d</li>
+          </ul>
+        </section>
+
+        <section class="main-section" id="section_5">
+          <header>section 5</header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum aspernatur, natus esse beatae, voluptas ex eveniet quasi ipsa, dignissimos cumque quidem voluptate ipsum totam maiores! Esse voluptates est iste aperiam.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum odio optio quaerat voluptatibus recusandae, quam accusantium consequuntur, voluptates, sit quia perferendis ullam doloremque cupiditate alias veritatis sequi ut fugit molestiae.</p>
+          <code>a b c</code>
+          <ul>
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+            <li>g</li>
+            <li>d</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
   </body>
 </html>
 <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>

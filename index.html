@@ -6,6 +6,17 @@
     <link rel="stylesheet" href="style.css">
     <title>PHP documentations</title>
     <style>
+    h1 {
+      color: #000;
+      font-size: 4rem;
+    }
+    a { color: white;}
+    section {
+      margin-bottom: 2rem;
+    }
+    /* section:last-of-type {
+      margin-bottom: 0;
+    } */
     section header {
       font-weight: 600;
       font-size: 3rem;
@@ -15,6 +26,9 @@
     p {
       color: #345;
     }
+    p:last-of-type {
+      margin-bottom: 1.5rem;
+    }
     pre {
       padding: 1rem;
       /* white-space: pre-line; */
@@ -23,31 +37,60 @@
     }
     code, code pre {
       font-family: monospace;
-      background: navy;
+      background: #323;
       color: whitesmoke;
+      max-width: 50em;
+      font-size: 1.9rem;
     }
     ul {
       list-style: none;
     }
+    .nav-link {
+      text-decoration: none;
+      color: #345;
+    }
+    .source-reference-link { color: black;}
     footer {
-      background: orangered;
+      background: #123334;
       padding: 1rem;
+      flex: 1 1 auto;
+      color: whitesmoke;
+      padding-left: 2rem;
     }
     .container {
       display: flex;
       flex-direction: column;
     }
-    .document {
+    .documentation-container {
       display: flex;
       flex-direction: column;
+      width: 100%;
     }
     #navbar,
     #main-doc {
       padding: 1rem;
     }
     @media (min-width: 600px) {
-      .document{
+      .navbar-list li {
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        text-transform: capitalize;
+      }
+      .nav-link {
+        padding: 0.5rem;
+        padding-left: 0;
+        transition: all 0.3s ease;
+      }
+      .nav-link:hover {
+        background: plum;
+        color: white;
+      }
+      .documentation-container{
         margin-left: 20vw;
+        padding-top: 1rem;
+      }
+      #main-doc {
+        padding: 2rem;
+
       }
       .container {
         flex-direction: row;
@@ -59,7 +102,8 @@
         background: whitesmoke;
         min-height: 100vh;
         width: 20vw;
-        padding-right: 2rem;
+        padding: 2rem;
+        border-right: 1px solid #333;
       }
     }
     </style>
@@ -69,9 +113,9 @@
       <nav id="navbar">
         <header>
           <h1>PHP</h1>
-          <p>Language basic reference<sup><a href="#source-reference">[1]</a></sup></p>
+          <p title="See page footer">Language basic reference<sup><a href="#source-reference" class="source-reference-link">[1]</a></sup></p>
         </header>
-        <ul>
+        <ul class="navbar-list">
           <li><a href="#intro" class="nav-link">intro</a></li>
           <li><a href="#types" class="nav-link">types</a></li>
           <li><a href="#variables" class="nav-link">variables</a></li>
@@ -80,7 +124,7 @@
           <li><a href="#functions" class="nav-link">functions</a></li>
         </ul>
       </nav>
-      <div class="document">
+      <div class="documentation-container">
         <main id="main-doc">
           <h1>PHP basic reference</h1>
           <section class="main-section" id="intro">
@@ -208,7 +252,7 @@ function foo($arg_1, $arg_2, /* ..., */ $arg_n)
 
         </main>
         <footer>
-          <small id="source-reference">All (or almost all) this information is taken from <a href="php.net">php.net</a> </small>
+          <small id="source-reference">All (or almost all) this information is taken from <a href="https://www.php.net/manual/en/index.php">php.net</a> </small>
         </footer>
 
       </div>

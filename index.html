@@ -6,10 +6,26 @@
     <link rel="stylesheet" href="style.css">
     <title></title>
     <style>
+    pre {
+      padding: 1rem;
+    }
+    code, code pre {
+      font-family: monospace;
+      background: navy;
+      color: whitesmoke;
+    }
     ul {
       list-style: none;
     }
+    footer {
+      background: orangered;
+      padding: 1rem;
+    }
     .container {
+      display: flex;
+      flex-direction: column;
+    }
+    .document {
       display: flex;
       flex-direction: column;
     }
@@ -26,7 +42,7 @@
         position:sticky;
         top: 0;
         background: whitesmoke;
-        height: 100vh;
+        min-height: 100vh;
       }
     }
     </style>
@@ -36,20 +52,21 @@
       <nav id="navbar">
         <header>
           <h1>PHP</h1>
-          <p>Language basic reference</p>
+          <p>Language basic reference*</p>
         </header>
         <ul>
           <li><a href="#intro" class="nav-link">intro</a></li>
           <li><a href="#types" class="nav-link">types</a></li>
-          <li><a href="#section_3" class="nav-link">section 3</a></li>
+          <li><a href="#variables" class="nav-link">variables</a></li>
           <li><a href="#section_4" class="nav-link">section 4</a></li>
           <li><a href="#section_5" class="nav-link">section 5</a></li>
         </ul>
       </nav>
-      <main id="main-doc">
-        <h1>PHP basic reference</h1>
-        <section class="main-section" id="intro">
-          <header>intro</header>
+      <div class="document">
+        <main id="main-doc">
+          <h1>PHP basic reference</h1>
+          <section class="main-section" id="intro">
+            <header>intro</header>
             <p> PHP is a popular general-purpose scripting language that is especially suited to web development.Fast, flexible and pragmatic, PHP powers everything from your blog to the most popular websites in the world.</p>
             <p>You can easily create a php file. Just put the following in a file and save it as a .php file</p>
             <code>
@@ -57,111 +74,96 @@
             </code>
             <p>or this: </p>
             <code>
-<pre>
-&lt;html&gt;
-  &lt;body&gt;
-    &lt;h1&gt;This content is also a valid php file...&lt;/h1&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</pre>
+              <pre>
+                &lt;html&gt;
+                &lt;body&gt;
+                &lt;h1&gt;This content is also a valid php file...&lt;/h1&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+              </pre>
             </code>
             <p>Then, all you need to do is run this file using the PHP <abbr title="Commnand line interface">
               CLI
-              </abbr>
-            </p>
+            </abbr>
+          </p>
         </section>
 
         <section class="main-section" id="types">
           <header>types</header>
-            <p>Before you start, you need to know some basics to avoid future headaches...</p>
-            <p>Fist: There are several data types in PHP</p>
+          <p>Before you start, you need to know some basics to avoid future headaches...</p>
+          <p>Fist: There are several data types in PHP</p>
           <ul>
-            <li>
-              Booleans
-            </li>
-            <li>
-              Integers
-            </li>
-            <li>
-              Floating point numbers
-            </li>
-            <li>
-              Strings
-            </li>
-            <li>
-              Numeric strings
-            </li>
-            <li>
-              Arrays
-            </li>
-            <li>
-              Iterables
-            </li>
-            <li>
-              Objects
-            </li>
-            <li>
-              Resources
-            </li>
-            <li>
-              NULL
-            </li>
-            <li>
-              Callbacks / Callables
-            </li>
-            <li>
-              Type declarations
-            </li>
-            <li>
-              Type Juggling
-            </li>
+            <li>Booleans</li>
+            <li>Integers</li>
+            <li>Floating point numbers</li>
+            <li>Strings</li>
+            <li>Numeric strings</li>
+            <li>Arrays</li>
+            <li>Iterables</li>
+            <li>Objects</li>
+            <li>Resources</li>
+            <li>NULL</li>
+            <li>Callbacks / Callables</li>
+            <li>Type declarations</li>
+            <li>Type Juggling</li>
           </ul>
         </section>
 
-        <section class="main-section" id="section_3">
-          <header>section 3</header>
+        <section class="main-section" id="variables">
+          <header>variables</header>
+          <p>A variable is a name given to a piece of data that resides in memory</p>
+          <p>Variable in php must start with <span class="var-sign">'$'<span> (dollar sign)</p>
+            <code>
+              <pre>
+                $a_variable;
+                $aVariable;
+                // both are valid names
+              </pre>
+            </code>
+            <p>However, there are some rules you have to follow when naming your variables (besides being meaninful)</p>
+            <ul>
+              <li>Cannot start with a number:</li>
+              <li>rule 2</li>
+              <li>rule 3</li>
+              <li>rule 4</li>
+              <li>rule 5</li>
+            </ul>
+          </section>
+
+          <section class="main-section" id="section_4">
+            <header>section 4</header>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum aspernatur, natus esse beatae, voluptas ex eveniet quasi ipsa, dignissimos cumque quidem voluptate ipsum totam maiores! Esse voluptates est iste aperiam.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum odio optio quaerat voluptatibus recusandae, quam accusantium consequuntur, voluptates, sit quia perferendis ullam doloremque cupiditate alias veritatis sequi ut fugit molestiae.</p>
-          <code>a b c</code>
-          <ul>
-            <li>a</li>
-            <li>b</li>
-            <li>c</li>
-            <li>g</li>
-            <li>d</li>
-          </ul>
-        </section>
+            <code>a b c</code>
+            <ul>
+              <li>a</li>
+              <li>b</li>
+              <li>c</li>
+              <li>g</li>
+              <li>d</li>
+            </ul>
+          </section>
 
-        <section class="main-section" id="section_4">
-          <header>section 4</header>
+          <section class="main-section" id="section_5">
+            <header>section 5</header>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum aspernatur, natus esse beatae, voluptas ex eveniet quasi ipsa, dignissimos cumque quidem voluptate ipsum totam maiores! Esse voluptates est iste aperiam.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum odio optio quaerat voluptatibus recusandae, quam accusantium consequuntur, voluptates, sit quia perferendis ullam doloremque cupiditate alias veritatis sequi ut fugit molestiae.</p>
-          <code>a b c</code>
-          <ul>
-            <li>a</li>
-            <li>b</li>
-            <li>c</li>
-            <li>g</li>
-            <li>d</li>
-          </ul>
-        </section>
+            <code>a b c</code>
+            <ul>
+              <li>a</li>
+              <li>b</li>
+              <li>c</li>
+              <li>g</li>
+              <li>d</li>
+            </ul>
+          </section>
+        </main>
+        <footer>
+          <small>All (or almost all) this information is taken from <a href="php.net">php.net</a> </small>
+        </footer>
 
-        <section class="main-section" id="section_5">
-          <header>section 5</header>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum aspernatur, natus esse beatae, voluptas ex eveniet quasi ipsa, dignissimos cumque quidem voluptate ipsum totam maiores! Esse voluptates est iste aperiam.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum odio optio quaerat voluptatibus recusandae, quam accusantium consequuntur, voluptates, sit quia perferendis ullam doloremque cupiditate alias veritatis sequi ut fugit molestiae.</p>
-          <code>a b c</code>
-          <ul>
-            <li>a</li>
-            <li>b</li>
-            <li>c</li>
-            <li>g</li>
-            <li>d</li>
-          </ul>
-        </section>
-      </main>
-    </div>
-
+      </div>
+  </div>
   </body>
 </html>
 <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>

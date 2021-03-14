@@ -4,10 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <title></title>
+    <title>PHP documentations</title>
     <style>
+    section header {
+      font-weight: 600;
+      font-size: 3rem;
+      text-transform: capitalize;
+      color: #333;
+    }
+    p {
+      color: #345;
+    }
     pre {
       padding: 1rem;
+      /* white-space: pre-line; */
+      padding-right: 2rem;
+      word-break: keep-all;
     }
     code, code pre {
       font-family: monospace;
@@ -34,15 +46,20 @@
       padding: 1rem;
     }
     @media (min-width: 600px) {
+      .document{
+        margin-left: 20vw;
+      }
       .container {
         flex-direction: row;
         /* position: relative; */
       }
       #navbar {
-        position:sticky;
+        position:fixed;
         top: 0;
         background: whitesmoke;
         min-height: 100vh;
+        width: 20vw;
+        padding-right: 2rem;
       }
     }
     </style>
@@ -52,14 +69,15 @@
       <nav id="navbar">
         <header>
           <h1>PHP</h1>
-          <p>Language basic reference*</p>
+          <p>Language basic reference<sup><a href="#source-reference">[1]</a></sup></p>
         </header>
         <ul>
           <li><a href="#intro" class="nav-link">intro</a></li>
           <li><a href="#types" class="nav-link">types</a></li>
           <li><a href="#variables" class="nav-link">variables</a></li>
-          <li><a href="#section_4" class="nav-link">section 4</a></li>
-          <li><a href="#section_5" class="nav-link">section 5</a></li>
+          <li><a href="#control_structures" class="nav-link">control structures</a></li>
+          <li><a href="#operators" class="nav-link">operators</a></li>
+          <li><a href="#functions" class="nav-link">functions</a></li>
         </ul>
       </nav>
       <div class="document">
@@ -74,13 +92,13 @@
             </code>
             <p>or this: </p>
             <code>
-              <pre>
-                &lt;html&gt;
-                &lt;body&gt;
-                &lt;h1&gt;This content is also a valid php file...&lt;/h1&gt;
-                &lt;/body&gt;
-                &lt;/html&gt;
-              </pre>
+<pre>
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1&gt;This content is also a valid php file...&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
             </code>
             <p>Then, all you need to do is run this file using the PHP <abbr title="Commnand line interface">
               CLI
@@ -111,55 +129,86 @@
 
         <section class="main-section" id="variables">
           <header>variables</header>
-          <p>A variable is a name given to a piece of data that resides in memory</p>
-          <p>Variable in php must start with <span class="var-sign">'$'<span> (dollar sign)</p>
+          <p> Variables in PHP are represented by a dollar sign followed by the name of the variable. The variable name is case-sensitive.
+          </p>
+          <p>
+Variable names follow the same rules as other labels in PHP. A valid variable name starts with a letter or underscore, followed by any number of letters, numbers, or underscores. As a regular expression, it would be expressed thus: ^[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff]*$
+</p>
+
             <code>
-              <pre>
-                $a_variable;
-                $aVariable;
-                // both are valid names
-              </pre>
+<pre>
+
+$var = 'Bob';
+$Var = 'Joe';
+echo "$var, $Var";      // outputs "Bob, Joe"
+
+$4site = 'not yet';     // invalid; starts with a number
+$_4site = 'not yet';    // valid; starts with an underscore
+$täyte = 'mansikka';    // valid; 'ä' is (Extended) ASCII 228.
+
+</pre>
             </code>
-            <p>However, there are some rules you have to follow when naming your variables (besides being meaninful)</p>
+          </section>
+
+          <section class="main-section" id="control_structures">
+            <header>control structures</header>
+            <p> Any PHP script is built out of a series of statements. A statement can be an assignment, a function call, a loop, a conditional statement or even a statement that does nothing (an empty statement). Statements usually end with a semicolon. In addition, statements can be grouped into a statement-group by encapsulating a group of statements with curly braces. A statement-group is a statement by itself as well. The various statement types are described in this chapter. </p>
+            <p>A list of some control structures:</p>
             <ul>
-              <li>Cannot start with a number:</li>
-              <li>rule 2</li>
-              <li>rule 3</li>
-              <li>rule 4</li>
-              <li>rule 5</li>
+              <li>if</li>
+              <li>else</li>
+              <li>elseif</li>
+              <li>while</li>
+              <li>for</li>
+              <li>switch</li>
+              <li>return</li>
+            </ul>
+            <code>
+<pre>
+$count = 0;
+$times = 2;
+if($count > 0) {
+  echo "count is positive";
+}
+
+for($i = 0; $i < $times; $i++) {
+  echo "We are in a for loop,$i times";
+}
+</pre>
+            </code>
+          </section>
+
+          <section class="main-section" id="operators">
+            <header>operators</header>
+            <p>An operator is something that takes one or more values (or expressions, in programming jargon) and yields another value (so that the construction itself becomes an expression). </p>
+            <p>Operators can be grouped according to the number of values they take. Unary operators take only one value, for example ! (the logical not operator) or ++ (the increment operator). Binary operators take two values, such as the familiar arithmetical operators + (plus) and - (minus), and the majority of PHP operators fall into this category. Finally, there is a single ternary operator, ? :, which takes three values; this is usually referred to simply as "the ternary operator" (although it could perhaps more properly be called the conditional operator). </p>
+            <p>Some operators (Binary)</p>
+            <ul>
+              <li>+ plus</li>
+              <li>- minus</li>
+              <li>* multiplication</li>
+              <li>/ division</li>
+              <li>% modulus</li>
             </ul>
           </section>
 
-          <section class="main-section" id="section_4">
-            <header>section 4</header>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum aspernatur, natus esse beatae, voluptas ex eveniet quasi ipsa, dignissimos cumque quidem voluptate ipsum totam maiores! Esse voluptates est iste aperiam.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum odio optio quaerat voluptatibus recusandae, quam accusantium consequuntur, voluptates, sit quia perferendis ullam doloremque cupiditate alias veritatis sequi ut fugit molestiae.</p>
-            <code>a b c</code>
-            <ul>
-              <li>a</li>
-              <li>b</li>
-              <li>c</li>
-              <li>g</li>
-              <li>d</li>
-            </ul>
+          <section class="main-section" id="functions">
+            <header>functions</header>
+            <p> A function may be defined using syntax such as the following: </p>
+            <code>
+<pre>
+function foo($arg_1, $arg_2, /* ..., */ $arg_n)
+{
+    echo "Example function.\n";
+    return $retval;
+}
+</pre>
+            </code>
           </section>
 
-          <section class="main-section" id="section_5">
-            <header>section 5</header>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum aspernatur, natus esse beatae, voluptas ex eveniet quasi ipsa, dignissimos cumque quidem voluptate ipsum totam maiores! Esse voluptates est iste aperiam.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum odio optio quaerat voluptatibus recusandae, quam accusantium consequuntur, voluptates, sit quia perferendis ullam doloremque cupiditate alias veritatis sequi ut fugit molestiae.</p>
-            <code>a b c</code>
-            <ul>
-              <li>a</li>
-              <li>b</li>
-              <li>c</li>
-              <li>g</li>
-              <li>d</li>
-            </ul>
-          </section>
         </main>
         <footer>
-          <small>All (or almost all) this information is taken from <a href="php.net">php.net</a> </small>
+          <small id="source-reference">All (or almost all) this information is taken from <a href="php.net">php.net</a> </small>
         </footer>
 
       </div>
